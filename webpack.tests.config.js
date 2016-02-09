@@ -34,8 +34,12 @@ var config = {
 
 // Use aliases from base config
 if (baseConfig.resolve && baseConfig.resolve.alias) {
-    config.resolve = config.resolve || {};
-    config.resolve.alias = baseConfig.resolve.alias;
+    if (config.resolve && config.resolve.alias) {
+        Object.assign(config.resolve.alias, baseConfig.resolve.alias);
+    } else {
+        config.resolve = config.resolve || {};
+        config.resolve.alias = baseConfig.resolve.alias;
+    }
 }
 
 module.exports = config;
