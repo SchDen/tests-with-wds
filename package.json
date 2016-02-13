@@ -1,12 +1,14 @@
 {
   "name": "webpack-mocha-tests",
-  "version": "0.0.1",
-  "description": "Create bundle for app testing wish webpack mocha chai",
+  "version": "0.1.0",
+  "description": "Starter kit for testing JavaScript app with webpack, mocha, and chai",
   "main": "index.js",
   "scripts": {
-    "test": "webpack-dev-server --config webpack.tests.config.js --inline"
+    "test": "webpack --config webpack.tests.config.js --inline -c --progress && mocha ./tests/test.build.js && rm ./tests/test.build.js",
+    "test-dev": "NODE_ENV=develop webpack-dev-server --config webpack.tests.config.js --inline"
   },
-  "author": "",
+  "repository": "https://github.com/SchDen/tests-with-wds",
+  "author": "Den",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
